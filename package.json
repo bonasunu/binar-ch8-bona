@@ -1,0 +1,20 @@
+{
+  "name": "binar-challenge-fsw-ch-8",
+  "version": "1.0.0",
+  "description": "Binar Academy Bootcamp challenge chapter 8",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "yogisaputro",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "pg": "^7.17.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.3"
+  }
+}
