@@ -1,0 +1,237 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server for Binar bootcamp challenge 8 submission by Bonaventura Sunu.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+    "version": "1.0.0",
+    "title": "Swagger Binar Bootcamp Challenge 8",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "players",
+      "description": "Everything about your Players"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/players": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Find all players",
+        "description": "Multiple values",
+        "operationId": "getAllPlayers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/Player"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Add new player to database",
+        "description": "Add new player",
+        "operationId": "addPlayer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Player object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Player"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/players/{id}": {
+      "get": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Find player by id",
+        "description": "Returns a single player",
+        "operationId": "getPlayerId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Player ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Edit player",
+        "description": "Edit player",
+        "operationId": "updatePlayer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Player ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Delete player",
+        "description": "Delete player",
+        "operationId": "deletePlayer",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Player ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+    "/players/exp/{id}": {
+      "post": {
+        "tags": [
+          "players"
+        ],
+        "summary": "Add player experience to database",
+        "description": "Add player expereince",
+        "operationId": "addPlayerExp",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Player ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Player object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Player"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Player": {
+      "type": "object",
+      "required": [
+        "username",
+        "password",
+        "email"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "harrypotter"
+        },
+        "email": {
+          "type": "string",
+          "example": "theboywholive@gmail.com"
+        },
+        "password": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "integer"
+        },
+        "lvl": {
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "Player"
+      }
+    }
+  }
+}
