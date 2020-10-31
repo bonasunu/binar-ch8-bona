@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbar = ({ navClass }) => {
   return (
-    <nav>
-      <a>Menu</a>
-      <a>Menu</a>
-      <a>Menu</a>
-      <a>Menu</a>
-      <a>Menu</a>
+    <nav className={navClass}>
+      <a href="/home">Menu</a>
+      <a href="/home">Menu</a>
+      <a href="/home">Menu</a>
+      <a href="/home">Menu</a>
+      <a href="/home">Menu</a>
     </nav>
   )
 }
