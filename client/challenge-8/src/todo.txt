@@ -1,0 +1,7 @@
+design dashboard
+create navbar
+create get all players component
+create form for adding new player
+create form for editing player
+add find player feature
+add player detail component
