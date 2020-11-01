@@ -1,8 +1,9 @@
 import React from 'react'
+import Dashboard from './Dashboard'
 
-const Main = ({ totalPlayers, mainClass }) => (
+const Main = ({ allPlayers, mainClass }) => (
   <div className={mainClass}>
-    <p className="">Total players: {totalPlayers}</p>
+    <Dashboard getPlayers={allPlayers} />
   </div>
 )
 

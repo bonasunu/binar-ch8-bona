@@ -16,16 +16,17 @@ function App() {
 
   // styling
   const classes = {
-    wrapper: 'h-screen overflow-hidden grid grid-cols-6',
-    navClass: 'bg-gray-800 col-span-1 p-3',
-    mainClass: 'bg-gray-200 col-span-5 p-3',
+    wrapper:
+      'lg:h-screen lg:overflow-hidden grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-6 xl:grid-cols-6',
+    navClass: 'bg-gray-800 col-span-1 flex flex-col items-start',
+    mainClass: 'sm:h-full md:h-full bg-gray-300 col-span-5 p-3',
   }
 
   // render
   return (
     <div className={classes.wrapper}>
       <Navbar navClass={classes.navClass} />
-      <Main totalPlayers={players.length} mainClass={classes.mainClass} />
+      <Main allPlayers={players} mainClass={classes.mainClass} />
     </div>
   )
 }
