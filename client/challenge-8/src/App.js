@@ -19,7 +19,7 @@ function App() {
     wrapper:
       'overflow-x-hidden lg:h-screen lg:overflow-hidden grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-6 xl:grid-cols-6',
     navClass: 'bg-gray-800 col-span-1 flex flex-col items-start',
-    mainClass: 'sm:h-full md:h-full bg-gray-300 col-span-5 p-3',
+    mainClass: 'overflow-y-auto sm:h-full md:h-full bg-gray-300 col-span-5 p-3',
   }
 
   // render
