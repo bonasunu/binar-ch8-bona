@@ -14,6 +14,32 @@ function App() {
       .catch((e) => console.error(e.message))
   }, [])
 
+  // default value if fetch failed
+  if (players.length === 0) {
+    setPlayers([
+      {
+        username: 'harrypotter',
+        password: '8c54d54c-be71-4f38-84ee-ec6559333751',
+        email: 'theboywholive@mail.co.uk',
+        experience: 150,
+        level: 10,
+      },
+      {
+        username: 'ronweasley',
+        password: '98597712-bd1c-4942-a887-fc0ca51b6d5f',
+        email: 'mrawesome@mail.co.uk',
+        experience: 90,
+        level: 7,
+      },
+      {
+        username: 'hermione',
+        password: '2374e89b-a80b-40e0-9dd3-4e58f246375d',
+        email: 'granger@mail.co.uk',
+        experience: 170,
+        level: 11,
+      },
+    ])
+  }
   // styling
   const classes = {
     wrapper:
