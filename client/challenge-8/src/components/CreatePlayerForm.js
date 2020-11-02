@@ -2,7 +2,7 @@ import React from 'react'
 
 const CreatePlayerForm = ({ submit }) => {
   const classes = {
-    wrapper: 'w-full max-w-5xl mx-auto mt-5 mb-20',
+    wrapper: 'w-full max-w-5xl mx-auto mt-5 mb-10',
     title: 'text-3xl font-extrabold py-5 text-gray-700 mb-2',
     form: 'flex flex-wrap rounded-xl bg-white rounded-xl py-2 px-5',
     formWrapper: 'w-full md:w-1/2 pr-3 mb-3',
@@ -19,7 +19,7 @@ const CreatePlayerForm = ({ submit }) => {
       <form onSubmit={submit}>
         <div className={classes.form}>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} for="username">
+            <label className={classes.formLabel} htmlFor="username">
               Username
             </label>
             <input
@@ -29,7 +29,7 @@ const CreatePlayerForm = ({ submit }) => {
             ></input>
           </div>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} for="email">
+            <label className={classes.formLabel} htmlFor="email">
               Email
             </label>
             <input
@@ -39,7 +39,7 @@ const CreatePlayerForm = ({ submit }) => {
             ></input>
           </div>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} for="password">
+            <label className={classes.formLabel} htmlFor="password">
               Password
             </label>
             <input
@@ -49,7 +49,7 @@ const CreatePlayerForm = ({ submit }) => {
             ></input>
           </div>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} for="confirm-password">
+            <label className={classes.formLabel} htmlFor="confirm-password">
               Confirm Password
             </label>
             <input

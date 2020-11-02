@@ -45,7 +45,7 @@ const Dashboard = ({ getPlayers }) => {
         </thead>
         <tbody className={classes.tableData}>
           {getPlayers.map((player) => (
-            <tr className={classes.tableDataRow}>
+            <tr className={classes.tableDataRow} key={player.username}>
               <td className={classes.tableContent}>{player.username}</td>
               <td className={classes.tableContent}>{player.email}</td>
               <td className={classes.tableContent}>{player.experience}</td>
