@@ -23,36 +23,40 @@ const ShowData = ({ data }) => {
         <p className={classes.resultData}>{data.username}</p>
         <p className={classes.resultInfo}>Email</p>
         <p className={classes.resultData}>{data.email}</p>
+        <p className={classes.resultInfo}>Experience</p>
+        <p className={classes.resultData}>{data.experience}</p>
+        <p className={classes.resultInfo}>Level</p>
+        <p className={classes.resultData}>{data.level}</p>
       </div>
     </div>
   )
 }
 
-const CreatePlayerForm = () => {
+const EditPlayerForm = () => {
   const [data, setData] = useState(null)
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [experience, setExperience] = useState('')
+  const [level, setLevel] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
     setData({
       username,
       email,
-      password,
+      experience,
+      level,
     })
     setUsername('')
     setEmail('')
-    setPassword('')
-    setConfirmPassword('')
+    setExperience('')
+    setLevel('')
   }
 
   const handleUsernameChange = (event) => setUsername(event.target.value)
   const handleEmailChange = (event) => setEmail(event.target.value)
-  const handlePasswordChange = (event) => setPassword(event.target.value)
-  const handleConfirmPasswordChange = (event) =>
-    setConfirmPassword(event.target.value)
+  const handleExperienceChange = (event) => setExperience(event.target.value)
+  const handleLevelChange = (event) => setLevel(event.target.value)
 
   // styling
   const classes = {
@@ -70,7 +74,7 @@ const CreatePlayerForm = () => {
   // render
   return (
     <div className={classes.wrapper}>
-      <h2 className={classes.title}>Create Player</h2>
+      <h2 className={classes.title}>Edit Player</h2>
       <form onSubmit={handleSubmit}>
         <div className={classes.form}>
           <div className={classes.formWrapper}>
@@ -98,32 +102,32 @@ const CreatePlayerForm = () => {
             ></input>
           </div>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} htmlFor="password">
-              Password
+            <label className={classes.formLabel} htmlFor="experience">
+              Experience
             </label>
             <input
               className={classes.formField}
-              type="password"
-              name="password"
-              value={password}
-              onChange={handlePasswordChange}
+              type="text"
+              name="experience"
+              value={experience}
+              onChange={handleExperienceChange}
             ></input>
           </div>
           <div className={classes.formWrapper}>
-            <label className={classes.formLabel} htmlFor="confirm-password">
-              Confirm Password
+            <label className={classes.formLabel} htmlFor="level">
+              Level
             </label>
             <input
               className={classes.formField}
-              type="password"
-              name="confirm-password"
-              value={confirmPassword}
-              onChange={handleConfirmPasswordChange}
+              type="text"
+              name="level"
+              value={level}
+              onChange={handleLevelChange}
             ></input>
           </div>
           <div className={classes.formWrapper}>
             <button className={classes.button} type="submit">
-              Create
+              Save
             </button>
           </div>
         </div>
@@ -133,4 +137,4 @@ const CreatePlayerForm = () => {
   )
 }
 
-export default CreatePlayerForm
+export default EditPlayerForm

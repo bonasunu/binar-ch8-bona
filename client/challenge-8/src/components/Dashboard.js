@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Dashboard = ({ getPlayers }) => {
   //  styling
   const classes = {
-    title: 'text-3xl font-extrabold py-5 text-gray-700',
-    wrapper: 'overflow-x-auto max-w-5xl mx-auto',
+    title: 'text-3xl font-extrabold py-5 text-gray-700 mb-2',
+    wrapper: 'overflow-x-auto max-w-5xl mx-auto mt-5',
     table: 'mt-5 rounded-xl bg-white table-auto w-full p-2',
     tableHead: 'rounded-xl text-gray-600 text-left border-b',
     tableData: 'text-left',
@@ -14,7 +15,11 @@ const Dashboard = ({ getPlayers }) => {
     boxInfoContent: 'bg-white rounded-xl px-5 py-3 mr-3 mb-3 w-48',
     boxTitle: 'text-gray-400 font-bold',
     boxData: 'font-bold text-5xl text-gray-600',
+    editLink: 'text-blue-500 hover:underline',
   }
+
+  const highestXp = Math.max(...getPlayers.map((p) => p.experience))
+  const highestLvl = Math.max(...getPlayers.map((p) => p.level))
 
   // render
   return (
@@ -27,11 +32,11 @@ const Dashboard = ({ getPlayers }) => {
         </div>
         <div className={classes.boxInfoContent}>
           <h3 className={classes.boxTitle}>Highest Experience</h3>
-          <p className={classes.boxData}>3</p>
+          <p className={classes.boxData}>{highestXp}</p>
         </div>
         <div className={classes.boxInfoContent}>
           <h3 className={classes.boxTitle}>Highest Level</h3>
-          <p className={classes.boxData}>5</p>
+          <p className={classes.boxData}>{highestLvl}</p>
         </div>
       </div>
       <table className={classes.table}>
@@ -41,6 +46,7 @@ const Dashboard = ({ getPlayers }) => {
             <th className={classes.tableContent}>Email</th>
             <th className={classes.tableContent}>Experience</th>
             <th className={classes.tableContent}>Level</th>
+            <th></th>
           </tr>
         </thead>
         <tbody className={classes.tableData}>
@@ -50,6 +56,11 @@ const Dashboard = ({ getPlayers }) => {
               <td className={classes.tableContent}>{player.email}</td>
               <td className={classes.tableContent}>{player.experience}</td>
               <td className={classes.tableContent}>{player.level}</td>
+              <td>
+                <Link className={classes.editLink} to="/edit-player">
+                  Edit
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
